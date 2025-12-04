@@ -3,7 +3,10 @@ export async function getCharacters() {
       const randomPage = Math.floor(Math.random() * 42) + 1; 
   
       const response = await fetch(
-        `https://rickandmortyapi.com/api/character/?page=${randomPage}`
+        `https://rickandmortyapi.com/api/character/?page=${randomPage}`,
+        {
+          cache: "no-store",
+        }
       );
   
       const data = await response.json();
